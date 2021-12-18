@@ -1,0 +1,5 @@
+export default {
+    PRIMARY_BACKGROUND_COLOR: '#F5F5F5',
+    WHITE: '#FFFFFF',
+    SHOPPING_BAG_NUMBER_COLOR: '#00B495'
+}
