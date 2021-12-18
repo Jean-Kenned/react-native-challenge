@@ -3,16 +3,17 @@ import React from 'react'
 import {
   makeHome
 } from '@/main/factories/pages'
+import { StatusBar } from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native'
-import { StatusBar } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 const RootStack = createStackNavigator()
 
 const Routes = (): React.FC => {
   return (
-    <NavigationContainer children={''}>
+    // eslint-disable-next-line react/no-children-prop
+    <NavigationContainer>
       <StatusBar backgroundColor="#38383860" />
       <RootStack.Navigator
         initialRouteName="Home"
@@ -23,6 +24,5 @@ const Routes = (): React.FC => {
     </NavigationContainer>
   )
 }
-
 
 export default Routes

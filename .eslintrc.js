@@ -8,15 +8,15 @@ module.exports = {
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "project": "./tsconfig-eslint.json"
+        "project": "./tsconfig-eslint.json",
+        "ecmaFeatures": {
+            "arrowFunctions":true,
+        },
       },
     "plugins": [
         "react",
         "@typescript-eslint"
     ],
-    "ecmaFeatures": {
-        "arrowFunctions":true,
-      },
     "rules": {
         "@typescript-eslint/consistent-type-definitions": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
@@ -28,5 +28,10 @@ module.exports = {
         "import/export": "off",
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "16.12.0"
+        }
     }
 };
