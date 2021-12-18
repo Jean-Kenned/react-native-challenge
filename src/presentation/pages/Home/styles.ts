@@ -21,3 +21,9 @@ export const Header = styled.View`
 export const ShoppingBagWrapper = styled.View`
     transform: translate(0, 16px); 
 `
+
+export const Content = styled.ScrollView`
+      padding-horizontal: ${Spacing.DEFAULT};
+      padding-top: ${Spacing.LARGE};
+      flex: 1;
+`

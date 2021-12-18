@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Header, ShoppingBagWrapper } from './styles'
+import { Container, Header, ShoppingBagWrapper, Content } from './styles'
 import Logo from '@/presentation/assets/logo.svg'
-import { ShoppingBag } from '@/presentation/components'
+import { ShoppingBag , SearchInput } from '@/presentation/components'
 
 const Home: React.FC = () => {
   return (
@@ -12,6 +12,9 @@ const Home: React.FC = () => {
           <ShoppingBag/>
         </ShoppingBagWrapper>
       </Header>
+      <Content>
+       <SearchInput/>
+      </Content>
     </Container>
   )
 }
