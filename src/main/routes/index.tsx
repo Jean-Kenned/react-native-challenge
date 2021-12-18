@@ -13,7 +13,7 @@ const RootStack = createStackNavigator()
 const Routes = (): React.FC => {
   return (
     // eslint-disable-next-line react/no-children-prop
-    <NavigationContainer>
+    <NavigationContainer children>
       <StatusBar backgroundColor="#38383860" />
       <RootStack.Navigator
         initialRouteName="Home"
