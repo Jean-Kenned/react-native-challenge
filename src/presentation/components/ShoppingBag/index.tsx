@@ -1,9 +1,9 @@
 import React from 'react'
 import BagImage from '@/presentation/assets/bag.svg'
-import {Container, Counter, Number} from './styles'
+import { Container, Counter, Number } from './styles'
 
-const ShoppingBag = () => {
-    return (
+const ShoppingBag = (): React.FC => {
+  return (
         <Container>
             <BagImage/>
             <Counter>
@@ -12,7 +12,7 @@ const ShoppingBag = () => {
                 </Number>
             </Counter>
         </Container>
-    )
-}   
+  )
+}
 
 export default ShoppingBag
