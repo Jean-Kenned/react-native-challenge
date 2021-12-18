@@ -1,0 +1,11 @@
+node_modules
+.vscode
+coverage
+public
+dist
+*.scss
+*.json
+**/assets/*.png
+**/detox/*
+*.md
+*.svg
