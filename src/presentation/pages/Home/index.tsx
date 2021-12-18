@@ -1,11 +1,17 @@
 import React from 'react'
-import { Text } from 'react-native'
-import { Container } from './styles'
+import { Container, Header, ShoppingBagWrapper } from './styles'
+import Logo from '@/presentation/assets/logo.svg'
+import { ShoppingBag } from '@/presentation/components'
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <Text style={{ color: 'black' }}>Home Page</Text>
+      <Header>
+        <Logo/>
+        <ShoppingBagWrapper>
+          <ShoppingBag/>
+        </ShoppingBagWrapper>
+      </Header>
     </Container>
   )
 }
