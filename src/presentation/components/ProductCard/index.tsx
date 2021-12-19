@@ -1,9 +1,8 @@
 import React from 'react'
 import { Container ,Card, Image, Title, UndiscountedPrice, DiscountWrapper, PriceMemberWrapper, PriceMemberText, NonMemberText } from './styles'
 import FastImage from 'react-native-fast-image'
-import { DiscountLabel, PriceMember } from '@/presentation/components'
+import { DiscountLabel, PriceMember, Button } from '@/presentation/components'
 import { formatPrice } from './formatPrice'
-import Button from '../Button'
 
 const ProductCard = (): React.FC => {
   return (
