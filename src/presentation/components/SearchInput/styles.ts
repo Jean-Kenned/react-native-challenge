@@ -3,12 +3,12 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
   align-items: center;
-  flex: 1;
   flex-direction: row;
   justify-content: space-between;
   background-color: ${Colors.BACKGROUND_SEARCH_INPUT_COLOR};
   border-radius: 10px;
   padding-left: ${Spacing.SMALL};
+  height: 48px;
 `
 
 export const Input = styled.TextInput`

@@ -16,10 +16,15 @@ export const Header = styled.View`
     padding: ${Spacing.DEFAULT};
     align-items: center;
     elevation: 4;
+    margin-bottom: ${Spacing.LARGE};
 `
 
 export const ShoppingBagWrapper = styled.View`
     transform: translate(0, 16px); 
+`
+
+export const SearchInputWrapper = styled.View`
+     padding-horizontal: ${Spacing.DEFAULT};
 `
 
 export const Content = styled.ScrollView`

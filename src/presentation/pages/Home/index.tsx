@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Header, ShoppingBagWrapper, Content, CardsContainer } from './styles'
+import { Container, Header, ShoppingBagWrapper, Content, CardsContainer, SearchInputWrapper } from './styles'
 import Logo from '@/presentation/assets/logo.svg'
 import { ShoppingBag , SearchInput, ProductCard } from '@/presentation/components'
 
@@ -12,8 +12,10 @@ const Home: React.FC = () => {
           <ShoppingBag/>
         </ShoppingBagWrapper>
       </Header>
-      <Content>
+      <SearchInputWrapper>
        <SearchInput/>
+      </SearchInputWrapper>
+      <Content>
        <CardsContainer>
         <ProductCard/>
         <ProductCard/>
