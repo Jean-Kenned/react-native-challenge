@@ -39,5 +39,6 @@ export const CardsContainer = styled.View`
     flex-direction: row;
     flex: 1;
     justify-content: flex-start;
+    padding-bottom: ${Spacing.LARGE};
 
 `
