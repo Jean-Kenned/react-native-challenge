@@ -3,13 +3,18 @@ import FastImage from 'react-native-fast-image'
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
-  elevation: 4;
   width: 40%;
+`
+
+export const Card = styled.View`
+  elevation: 4;
   background-color: ${Colors.WHITE};
   border-radius: 4px;
   align-items: center;
   padding: ${Spacing.SMALL};
- `
+  width: 100%;
+  margin-bottom: ${Spacing.SMALL};
+`
 
 export const Image = styled(FastImage)`
   width: 100%;
