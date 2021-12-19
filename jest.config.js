@@ -1,2 +1,9 @@
-export const preset = "react-native";
-export const moduleFileExtensions = ["ts", "tsx", "js", "jsx", "json", "node"];
+module.exports = {
+    testEnvironment: 'jsdom',
+    testPathIgnorePatterns: ['/node_modules/'],
+    collectCoverage: false,
+    collectCoverageFrom: ['src/**/*.ts(x)?'],
+    setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
+    modulePaths: ['<rootDir>/src/']
+  }
+  
