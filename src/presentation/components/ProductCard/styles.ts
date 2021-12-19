@@ -3,7 +3,11 @@ import FastImage from 'react-native-fast-image'
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
-  width: 40%;
+  max-width: 300px;
+  min-width: 150px;
+  flex: 1;
+  margin-bottom: ${Spacing.LARGE};
+  margin-horizontal: ${Spacing.DEFAULT};
 `
 
 export const Card = styled.View`
@@ -33,7 +37,7 @@ export const Title = styled.Text`
 export const DiscountWrapper = styled.View`
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: ${Spacing.SMALL};
 `
 
@@ -46,12 +50,13 @@ export const UndiscountedPrice = styled.Text`
   text-decoration-line: line-through;
   text-transform: uppercase;
   color: #888888;
+  margin-right: ${Spacing.SMALL};
 `
 
 export const PriceMemberWrapper = styled.View`
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-top: ${Spacing.SMALL};
 `
@@ -64,6 +69,7 @@ export const PriceMemberText = styled.Text`
   text-align: right;
   text-transform: uppercase;
   color: ${Colors.MEMBER_TEXT_COLOR};
+  margin-right: ${Spacing.SMALL};
 `
 
 export const NonMemberText = styled.Text`

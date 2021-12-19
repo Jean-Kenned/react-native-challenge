@@ -27,3 +27,12 @@ export const Content = styled.ScrollView`
       padding-top: ${Spacing.LARGE};
       flex: 1;
 `
+
+export const CardsContainer = styled.View`
+    margin-top: ${Spacing.MEDIUM};
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-start;
+
+`
