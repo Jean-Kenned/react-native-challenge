@@ -14,7 +14,7 @@ export const Container = styled.View`
 export const Input = styled.TextInput`
   color: ${Colors.PLACEHOLDER_SEARCH_INPUT_TEXT_COLOR};
   flex: 1;
-  font-size: ${Fonts.SIZE_1_8};
+  font-size: ${Fonts.SIZE_1_8x};
   margin-right: ${Spacing.DEFAULT};
   margin-left: ${Spacing.DEFAULT};
 `
