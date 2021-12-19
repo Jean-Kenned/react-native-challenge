@@ -1,4 +1,4 @@
-import {formatPrice} from '@/presentation/components/ProductCard/formatPrice'
+import { formatPrice } from '@/presentation/components/ProductCard/formatPrice'
 
 describe('Validate formatPrice function', () => {
   test('Should return the correct price value formatted', () => {

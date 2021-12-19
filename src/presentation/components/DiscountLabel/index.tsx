@@ -5,7 +5,7 @@ type Props = {
   text: string
 }
 
-const DiscountLabel = ({text}:Props): React.FC => {
+const DiscountLabel = ({ text }: Props): React.FC => {
   return (
     <Container>
        <Text>
