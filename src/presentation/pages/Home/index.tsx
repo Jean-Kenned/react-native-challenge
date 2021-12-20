@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Header, ShoppingBagWrapper, Content, CardsContainer, SearchInputWrapper } from './styles'
 import Logo from '@/presentation/assets/logo.svg'
 import { ShoppingBag , SearchInput, ProductCard } from '@/presentation/components'
+import { LoadProducts } from '@/domain/usecases'
 
-const Home: React.FC = () => {
+type Props = {
+  loadProducts: LoadProducts
+}
+
+const Home: React.FC<Props> = ({ loadProducts }: Props) => {
+  useEffect(() => {
+    loadProducts.loadAll({ limit: 10 }).then((resp) => {
+
+    })
+  }, [])
+
   return (
     <Container>
       <Header>
