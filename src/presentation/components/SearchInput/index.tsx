@@ -8,8 +8,7 @@ type Props = {
   value: string
 }
 
-
-const SearchInput = ({onChangeText, value}:Props): React.FC => {
+const SearchInput = ({ onChangeText, value }: Props): React.FC => {
   return (
     <Container>
         <SearchIcon/>

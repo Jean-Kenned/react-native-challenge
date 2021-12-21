@@ -14,9 +14,8 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
   const [totalPages, setTotalPages] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [loading,setLoading] = useState<boolean>(false)
-  const [textSearch, setTextSearch] = useState<string>("")
+  const [textSearch, setTextSearch] = useState<string>('')
   const pageLimit = 10
-
 
   useEffect(() => {
     setLoading(true)
@@ -26,7 +25,6 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
     }).catch()
       .finally(() => setLoading(false))
   }, [currentPage, textSearch])
-
 
   return (
     <Container>

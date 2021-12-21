@@ -22,7 +22,7 @@ export class RemoteLoadProducts implements LoadProducts {
         items: response?.items ?? [],
         totalPages: response?.totalPages ?? 0
       }
-      case HttpStatusCode.noContent: return {items: [], totalPages: 0}
+      case HttpStatusCode.noContent: return { items: [], totalPages: 0 }
       case HttpStatusCode.forbidden: throw new AccessDeniedError()
       default: throw new UnexpectedError()
     }
