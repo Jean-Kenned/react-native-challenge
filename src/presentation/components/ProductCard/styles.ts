@@ -18,6 +18,7 @@ export const Card = styled.View`
   padding: ${Spacing.SMALL};
   width: 100%;
   margin-bottom: ${Spacing.SMALL};
+  min-height: 350px;
 `
 
 export const Image = styled(FastImage)`
