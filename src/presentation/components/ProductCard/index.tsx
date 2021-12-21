@@ -3,30 +3,38 @@ import { Container ,Card, Image, Title, UndiscountedPrice, DiscountWrapper, Pric
 import FastImage from 'react-native-fast-image'
 import { DiscountLabel, PriceMember, Button } from '@/presentation/components'
 import { formatPrice } from './formatPrice'
+import { ProductModel } from '@/domain/models'
 
-const ProductCard = (): React.FC => {
+type Props = {
+  product: ProductModel
+  key?: string
+}
+
+const ProductCard = ({ product }: Props): React.FC => {
+  const { image, priceNonMember, discount, priceMember, name } = product
+
   return (
     <Container>
       <Card>
         <Image
         resizeMode={FastImage.resizeMode.contain}
         source={{
-          uri: 'https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png',
+          uri: image,
           priority: FastImage.priority.high
         }}/>
-          <Title>Toro Loco D.O.P. Utiel-Requena Tempranillo 2017</Title>
+          <Title>{name}</Title>
           <DiscountWrapper>
-            <UndiscountedPrice>{formatPrice(30.40)}</UndiscountedPrice>
-            <DiscountLabel text={`${15}% OFF`}/>
+            <UndiscountedPrice>{formatPrice(priceNonMember)}</UndiscountedPrice>
+            <DiscountLabel text={`${discount}% OFF`}/>
           </DiscountWrapper>
           <PriceMemberWrapper>
             <PriceMemberText>
               {'Sócio\n Wine'}
             </PriceMemberText>
-            <PriceMember price={30}/>
+            <PriceMember price={priceMember}/>
           </PriceMemberWrapper>
           <NonMemberText>
-            {`Não sócio ${formatPrice(30)}`}
+            {`Não sócio ${formatPrice(priceNonMember)}`}
           </NonMemberText>
       </Card>
       <Button text={'Adicionar'}/>
