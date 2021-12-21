@@ -7,6 +7,11 @@ export type ProductFilters = {
   filter?: string
 }
 
+export type LoadProductsResponse = {
+  items: ProductModel[],
+  totalPages: number
+}
+
 export interface LoadProducts {
-  loadAll: (filters?: ProductFilters) => Promise<ProductModel[]>
+  loadAll: (filters?: ProductFilters) => Promise<LoadProductsResponse>
 }
