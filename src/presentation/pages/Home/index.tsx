@@ -14,17 +14,19 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
   const [totalPages, setTotalPages] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [loading,setLoading] = useState<boolean>(false)
+  const [textSearch, setTextSearch] = useState<string>("")
   const pageLimit = 10
 
 
   useEffect(() => {
     setLoading(true)
-    loadProducts.loadAll({ limit: pageLimit, page: currentPage }).then(response => {
+    loadProducts.loadAll({ limit: pageLimit, page: currentPage, name: textSearch }).then(response => {
       setProducts(response.items)
       setTotalPages(response.totalPages)
     }).catch()
       .finally(() => setLoading(false))
-  }, [currentPage])
+  }, [currentPage, textSearch])
+
 
   return (
     <Container>
@@ -35,7 +37,7 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
         </ShoppingBagWrapper>
       </Header>
       <SearchInputWrapper>
-       <SearchInput/>
+       <SearchInput onChangeText={setTextSearch} value={textSearch}/>
       </SearchInputWrapper>
       {loading
         ? <Loading/>
