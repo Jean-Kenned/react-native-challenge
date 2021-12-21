@@ -39,6 +39,10 @@ export const CardsContainer = styled.View`
     flex-direction: row;
     flex: 1;
     justify-content: flex-start;
-    padding-bottom: ${Spacing.LARGE};
+    padding-bottom: ${Spacing.DEFAULT};
+`
 
+export const PaginationWrapper = styled.View`
+    align-items: center;
+    margin-bottom: 64px;
 `
