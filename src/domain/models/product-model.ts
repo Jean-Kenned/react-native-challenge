@@ -8,6 +8,7 @@ export type ProductModel = {
   priceNonMember: number
   type: string
   classification: string
+  size: string
   volume: string
   rating: number
   avaliations: number

@@ -4,6 +4,8 @@ import FastImage from 'react-native-fast-image'
 import { DiscountLabel, PriceMember, Button } from '@/presentation/components'
 import { formatPrice } from './formatPrice'
 import { ProductModel } from '@/domain/models'
+import { useNavigation } from '@react-navigation/native'
+import { ProductProps } from '@/main/routes/routes.types'
 
 type Props = {
   product: ProductModel
@@ -12,10 +14,13 @@ type Props = {
 
 const ProductCard = ({ product }: Props): React.FC => {
   const { image, priceNonMember, discount, priceMember, name } = product
+  const navigation = useNavigation<ProductProps['navigation']>()
 
   return (
     <Container>
-      <Card>
+      <Card onPress={() => navigation.navigate('Product',{
+        product: product
+      })}>
         <Image
         resizeMode={FastImage.resizeMode.contain}
         source={{

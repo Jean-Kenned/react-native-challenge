@@ -10,7 +10,7 @@ export const Container = styled.View`
   margin-horizontal: ${Spacing.DEFAULT};
 `
 
-export const Card = styled.View`
+export const Card = styled.TouchableOpacity`
   elevation: 4;
   background-color: ${Colors.WHITE};
   border-radius: 4px;

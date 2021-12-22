@@ -1,14 +1,16 @@
 
 import React from 'react'
 import {
-  makeHome
+  makeHome,
+  makeProduct
 } from '@/main/factories/pages'
 import { StatusBar } from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import { RootStackParamList } from '@/main/routes/routes.types'
 
-const RootStack = createStackNavigator()
+const RootStack = createStackNavigator<RootStackParamList>()
 
 const Routes = (): React.FC => {
   return (
@@ -20,6 +22,7 @@ const Routes = (): React.FC => {
         screenOptions={{ headerShown: false }}
       >
         <RootStack.Screen name="Home" component={makeHome} />
+        <RootStack.Screen name="Product" component={makeProduct} />
       </RootStack.Navigator>
     </NavigationContainer>
   )
