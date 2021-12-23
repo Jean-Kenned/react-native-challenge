@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Header, ShoppingBagWrapper, Content, CardsContainer, SearchInputWrapper, PaginationWrapper } from './styles'
 import Logo from '@/presentation/assets/logo.svg'
-import { ShoppingBag , SearchInput, ProductCard, Pagination, Loading } from '@/presentation/components'
+import { ShoppingBag , SearchInput, Pagination, Loading } from '@/presentation/components'
 import { LoadProducts } from '@/domain/usecases'
 import { ProductModel } from '@/domain/models'
+import { makeProductCard as ProductCard } from '@/main/factories/components'
 
 type Props = {
   loadProducts: LoadProducts
