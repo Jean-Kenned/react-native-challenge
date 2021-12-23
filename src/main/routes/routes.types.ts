@@ -3,7 +3,8 @@ import { StackScreenProps } from '@react-navigation/stack'
 
 export type RootStackParamList = {
   Home: undefined
-  Product: {product: ProductModel}
+  Product: { product: ProductModel }
+  ShoppingCart: undefined
 }
 
 export type HomeProps = StackScreenProps<
@@ -14,4 +15,9 @@ RootStackParamList,
 export type ProductProps = StackScreenProps<
 RootStackParamList,
 'Product'
+>
+
+export type ShoppingCartProps = StackScreenProps<
+RootStackParamList,
+'ShoppingCart'
 >

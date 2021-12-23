@@ -2,7 +2,8 @@
 import React from 'react'
 import {
   makeHome,
-  makeProduct
+  makeProduct,
+  makeShoppingCart
 } from '@/main/factories/pages'
 import { StatusBar } from 'react-native'
 
@@ -23,6 +24,7 @@ const Routes = (): React.FC => {
       >
         <RootStack.Screen name="Home" component={makeHome} />
         <RootStack.Screen name="Product" component={makeProduct} />
+        <RootStack.Screen name="ShoppingCart" component={makeShoppingCart} />
       </RootStack.Navigator>
     </NavigationContainer>
   )
