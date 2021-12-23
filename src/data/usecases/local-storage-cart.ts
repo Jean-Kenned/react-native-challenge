@@ -1,5 +1,5 @@
 import { Cart } from '@/domain/usecases'
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { ProductModel } from '@/domain/models'
 
 export class LocalStorageCart implements Cart {
