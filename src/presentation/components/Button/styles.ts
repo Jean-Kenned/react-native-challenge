@@ -6,7 +6,6 @@ type ContainerProps = {
 }
 
 export const Container = styled.TouchableOpacity<ContainerProps>`
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
