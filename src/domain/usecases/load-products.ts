@@ -10,6 +10,7 @@ export type ProductFilters = {
 export type LoadProductsResponse = {
   items: ProductModel[]
   totalPages: number
+  totalItems: number
 }
 
 export interface LoadProducts {
