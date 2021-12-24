@@ -6,7 +6,7 @@ import { Colors } from '@/presentation/helpers'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import FastImage from 'react-native-fast-image'
 import { SvgUri } from 'react-native-svg'
-import { makeFooter as Footer } from '@/main/factories/components'
+import Footer from './Footer'
 import { ScrollView } from 'react-native'
 
 const Product: React.FC = ({ navigation, route }: ProductProps) => {

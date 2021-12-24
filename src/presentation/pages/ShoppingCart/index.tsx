@@ -1,33 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Header, Content, CardsContainer } from './styles'
 import Logo from '@/presentation/assets/logo.svg'
-import { Loading } from '@/presentation/components'
-import { Cart } from '@/domain/usecases'
 import { ProductModel } from '@/domain/models'
-import { makeProductCard as ProductCard } from '@/main/factories/components'
+import { ProductCard } from '@/presentation/components'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import { useNavigation } from '@react-navigation/native'
 import { Colors } from '@/presentation/helpers'
+import { useStorage } from '@/presentation/hooks'
 
-type Props = {
-  cart: Cart
-}
-
-const ShoppingCart: React.FC<Props> = ({ cart }: Props) => {
+const ShoppingCart: React.FC = () => {
   const [products, setProducts] = useState<ProductModel[]>([])
-  const [loading,setLoading] = useState<boolean>(false)
   const navigation = useNavigation()
+  const { cartProducts } = useStorage()
 
   useEffect(() => {
-    setLoading(true)
-
-    cart.getAll().then(products => {
-      setProducts(products)
-    }).catch()
-      .finally(() => {
-        setLoading(false)
-      })
-  },[])
+    setProducts(cartProducts)
+  },[cartProducts])
 
   return (
     <Container>
@@ -42,14 +30,11 @@ const ShoppingCart: React.FC<Props> = ({ cart }: Props) => {
         />
          <Logo/>
       </Header>
-      {loading
-        ? <Loading/>
-        : <Content>
+      <Content>
           <CardsContainer>
             {products.map((product, index) => <ProductCard key={index} product={product}/>)}
           </CardsContainer>
-        </Content>
-      }
+      </Content>
     </Container>
   )
 }

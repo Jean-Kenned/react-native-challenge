@@ -4,12 +4,11 @@ import { Container, Text } from './styles'
 type Props = {
   onPress: CallableFunction
   isAddedInCart: boolean
-  disabled: boolean
 }
 
-const Button = ({ onPress, isAddedInCart, disabled }: Props): React.FC => {
+const Button = ({ onPress, isAddedInCart }: Props): React.FC => {
   return (
-    <Container onPress={onPress} isAddedInCart={isAddedInCart} disabled={disabled}>
+    <Container onPress={onPress} isAddedInCart={isAddedInCart}>
        <Text>
           {isAddedInCart ? 'REMOVER' : 'ADICIONAR'}
        </Text>

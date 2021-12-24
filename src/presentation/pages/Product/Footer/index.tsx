@@ -11,6 +11,7 @@ import {
 import { ProductModel } from '@/domain/models'
 import { Button, DiscountLabel } from '@/presentation/components'
 import { formatPrice } from '@/presentation/components/ProductCard/formatPrice'
+import { useStorage } from '@/presentation/hooks'
 
 type Props = {
   product: ProductModel
@@ -18,6 +19,7 @@ type Props = {
 
 const Footer: React.FC<Props> = ({ product }: Props) => {
   const { priceNonMember, priceMember } = product
+  const { checkIfAddedInCart,addOrRemoveProduct } = useStorage()
 
   return (
     <Container>
@@ -32,7 +34,7 @@ const Footer: React.FC<Props> = ({ product }: Props) => {
         )}`}</NoMemberText>
       </PriceInfosWrapper>
       <ButtonWrapper>
-        <Button text='ADICIONAR'/>
+        <Button onPress={async () => addOrRemoveProduct(product)} isAddedInCart={checkIfAddedInCart(product)}/>
       </ButtonWrapper>
     </Container>
   )

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Header, ShoppingBagWrapper, Content, CardsContainer, SearchInputWrapper, PaginationWrapper } from './styles'
 import Logo from '@/presentation/assets/logo.svg'
-import { ShoppingBag , SearchInput, Pagination, Loading } from '@/presentation/components'
+import { ShoppingBag , SearchInput, Pagination, Loading , ProductCard } from '@/presentation/components'
 import { LoadProducts } from '@/domain/usecases'
 import { ProductModel } from '@/domain/models'
-import { makeProductCard as ProductCard } from '@/main/factories/components'
+import { useStorage } from '@/presentation/hooks'
 
 type Props = {
   loadProducts: LoadProducts
@@ -17,6 +17,7 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
   const [loading,setLoading] = useState<boolean>(false)
   const [textSearch, setTextSearch] = useState<string>('')
   const pageLimit = 10
+  const { loadAllProductsFromCart } = useStorage()
 
   useEffect(() => {
     setLoading(true)
@@ -26,6 +27,10 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
     }).catch()
       .finally(() => setLoading(false))
   }, [currentPage, textSearch])
+
+  useEffect(() => {
+    loadAllProductsFromCart()
+  },[])
 
   return (
     <Container>

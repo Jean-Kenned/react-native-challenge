@@ -6,6 +6,7 @@ import { formatPrice } from './formatPrice'
 import { ProductModel } from '@/domain/models'
 import { useNavigation } from '@react-navigation/native'
 import { ProductProps } from '@/main/routes/routes.types'
+import { useStorage } from '@/presentation/hooks'
 
 type Props = {
   product: ProductModel
@@ -15,6 +16,7 @@ type Props = {
 const ProductCard = ({ product }: Props): React.FC => {
   const { image, priceNonMember, discount, priceMember, name } = product
   const navigation = useNavigation<ProductProps['navigation']>()
+  const { checkIfAddedInCart,addOrRemoveProduct } = useStorage()
 
   return (
     <Container>
@@ -42,7 +44,7 @@ const ProductCard = ({ product }: Props): React.FC => {
             {`Não sócio ${formatPrice(priceNonMember)}`}
           </NonMemberText>
       </Card>
-      <Button text={'Adicionar'}/>
+      <Button onPress={async () => addOrRemoveProduct(product)} isAddedInCart={checkIfAddedInCart(product)}/>
     </Container>
   )
 }
