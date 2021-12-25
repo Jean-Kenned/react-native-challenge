@@ -32,13 +32,13 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
       setTotalItems(response.totalItems)
       setCurrentPage(1)
     }).catch()
-      .finally(() => { 
+      .finally(() => {
         setLoading(false)
       })
   }, [textSearch, priceFilter])
 
   useEffect(() => {
-    if(loading) return
+    if (loading) return
     setLoading(true)
     loadProducts.loadAll({ limit: pageLimit, page: currentPage, name: textSearch, filter: priceFilter.value }).then(response => {
       setProducts(response.items)
@@ -47,7 +47,6 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
     }).catch()
       .finally(() => setLoading(false))
   }, [currentPage])
-
 
   useEffect(() => {
     loadAllProductsFromCart()

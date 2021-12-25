@@ -8,7 +8,6 @@ import { useStorage } from '@/presentation/hooks'
 const ShoppingBag = (): React.FC => {
   const navigation = useNavigation<ShoppingCartProps['navigation']>()
   const { getNumberOfProductsInCart } = useStorage()
-  
 
   return (
         <Container onPress={() => navigation.navigate('ShoppingCart')}>
