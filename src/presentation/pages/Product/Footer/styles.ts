@@ -4,12 +4,11 @@ import { Fonts, Spacing } from '@/presentation/helpers'
 
 export const Container = styled.View`
     width: 100%;
-    elevation: 1;
-    shadow-color: #000;
-    shado-opacity: 0.5px;
-    shadow-radius: 2px;
     padding: ${Spacing.DEFAULT};
     flex-direction: row;
+    elevation: 1;
+    border-top-width: 2px;
+    border-color: transparent;
 `
 
 export const DiscountLabelWrapper = styled.View`
