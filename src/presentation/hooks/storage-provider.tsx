@@ -1,6 +1,8 @@
 import { ProductModel } from '@/domain/models'
 import { Cart } from '@/domain/usecases'
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import Toast from 'react-native-toast-message'
+import { usePreviousState } from './previous-state'
 
 const StorageContext = React.createContext({})
 
@@ -19,6 +21,19 @@ interface StorageContextData {
 
 export const StorageProvider: React.FC = ({ children, cart }: Props) => {
   const [cartProducts, setCartProducts] = useState<ProductModel[]>([])
+  const previousCartProducts = usePreviousState<ProductModel[]>(cartProducts)
+
+  const isProductAdded = (): boolean => {
+    return previousCartProducts.length < cartProducts.length
+  }
+
+  useEffect(() => {
+    if (!previousCartProducts?.length || previousCartProducts.length === cartProducts.length) return
+    Toast.show({
+      type: 'success',
+      text1: isProductAdded() ? 'Produto adicionado ao carrinho' : 'Produto removido do carrinho'
+    })
+  },[cartProducts])
 
   const addOrRemoveProduct = (product: ProductModel): void => {
     cart.addOrRemove(product).then(() => {
