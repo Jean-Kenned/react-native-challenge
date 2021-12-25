@@ -13,6 +13,7 @@ interface StorageContextData {
   addOrRemoveProduct: (product: ProductModel) => void
   loadAllProductsFromCart: () => void
   checkIfAddedInCart: (product: ProductModel) => boolean
+  getNumberOfProductsInCart: () => number
   cartProducts: ProductModel[]
 }
 
@@ -34,9 +35,13 @@ export const StorageProvider: React.FC = ({ children, cart }: Props) => {
     return !(isAdded === undefined)
   }
 
+  const getNumberOfProductsInCart = (): boolean => {
+    return cartProducts.length
+  }
+
   return (
     <StorageContext.Provider
-      value={{ addOrRemoveProduct, loadAllProductsFromCart, checkIfAddedInCart, cartProducts }}>
+      value={{ addOrRemoveProduct, loadAllProductsFromCart, checkIfAddedInCart, getNumberOfProductsInCart, cartProducts }}>
       {children}
     </StorageContext.Provider>
   )
