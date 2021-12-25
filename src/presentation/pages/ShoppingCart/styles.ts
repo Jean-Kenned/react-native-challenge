@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 import Colors from '@/presentation/helpers/colors'
-import { Spacing } from '@/presentation/helpers'
+import { Fonts, Spacing } from '@/presentation/helpers'
 
 export const Container = styled.View`
     background-color: ${Colors.PRIMARY_BACKGROUND_COLOR};
@@ -32,4 +32,21 @@ export const CardsContainer = styled.View`
     flex: 1;
     justify-content: flex-start;
     padding-bottom: ${Spacing.DEFAULT};
+`
+
+export const NoContentWrapper = styled.View`
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin-top: ${Spacing.SMALL};
+        padding: ${Spacing.DEFAULT};
+`
+
+export const TextNoContent = styled.Text`
+        color: ${Colors.DESCRIPTION_PRODUCT_TEXT_COLOR};
+        font-size: ${Fonts.SIZE_2x};
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: ${Spacing.SMALL};
+        padding: ${Spacing.DEFAULT};
 `
