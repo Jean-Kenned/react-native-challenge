@@ -26,13 +26,28 @@ const Home: React.FC<Props> = ({ loadProducts }: Props) => {
 
   useEffect(() => {
     setLoading(true)
+    loadProducts.loadAll({ limit: pageLimit, page: 1, name: textSearch, filter: priceFilter.value }).then(response => {
+      setProducts(response.items)
+      setTotalPages(response.totalPages)
+      setTotalItems(response.totalItems)
+      setCurrentPage(1)
+    }).catch()
+      .finally(() => { 
+        setLoading(false)
+      })
+  }, [textSearch, priceFilter])
+
+  useEffect(() => {
+    if(loading) return
+    setLoading(true)
     loadProducts.loadAll({ limit: pageLimit, page: currentPage, name: textSearch, filter: priceFilter.value }).then(response => {
       setProducts(response.items)
       setTotalPages(response.totalPages)
       setTotalItems(response.totalItems)
     }).catch()
       .finally(() => setLoading(false))
-  }, [currentPage, textSearch, priceFilter])
+  }, [currentPage])
+
 
   useEffect(() => {
     loadAllProductsFromCart()
