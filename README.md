@@ -23,13 +23,13 @@ Alguns conceitos e tecnologias utilizadas durante a implementação:
 - Instale as dependências através do seguinte comando no diretório raiz do projeto:
 
 ``` 
-    yarn install
-    ```
+yarn install
+```
 
 - Conecte um smartphone através de um cabo USB ou abra um emulador e execute os seguintes comandos:
 
- ```
-    yarn start
-    yarn android
-    ```
+```
+yarn start
+yarn android
+```
 
