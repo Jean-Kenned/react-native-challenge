@@ -33,3 +33,8 @@ yarn start
 yarn android
 ```
 
+
+
+![Home Page](./screenshots/homePage.jpeg)
+![Product Page](./screenshots/productPage.jpeg)
+![Cart Page](./screenshots/cartPage.jpeg)
