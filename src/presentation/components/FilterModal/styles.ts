@@ -22,7 +22,7 @@ export const Content = styled.View`
   justify-content: center;
   elevation: 5;
   shadow-color: #000;
-  shadow-opacity: 0.25px;
+  shadow-opacity: 0.25;
   shadow-radius: 4px;
 `
 
